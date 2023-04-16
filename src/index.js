@@ -11,24 +11,17 @@ const BookList = () => {
 };
 
 const Book = () => {
+  const title = "Hello Beautiful";
+  const author = "Ann Napolitano";
+
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src="./images/book-cover-1.jpg" alt="Hello Beautiful Novel Cover" />
+      <h2>{title}</h2>
+      <h4>{author.toUpperCase()}</h4>
     </article>
   );
 };
 
-const Image = () => (
-  <img
-    src="https://m.media-amazon.com/images/I/51YGx8qVVXL.jpg"
-    alt="Hello Beautiful Novel Cover"
-  />
-);
-const Title = () => <h2>Hello Beautiful</h2>;
-const Author = () => {
-  return <h4>Ann Napolitano</h4>;
-};
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<BookList />);
