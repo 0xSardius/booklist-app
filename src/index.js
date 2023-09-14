@@ -19,48 +19,32 @@ const books = [
 
 const BookList = () => {
   return (
-    <section className="booklist">
-      <EventExamples />
-      {books.map((book, index) => {
-        const { img, title, author, id } = book;
-
-        return <Book {...book} img={img} key={book.id} />;
-      })}
-    </section>
-  );
-};
-
-const EventExamples = () => {
-  const handleFormInput = (e) => {
-    console.log(e.target.value);
-  };
-  const handleButtonClick = (e) => {
-    console.log(e);
-  };
-  return (
     <section>
-      <form>
-        <h2>Typical Form</h2>
-        <input
-          type="text"
-          name="example"
-          onChange={handleFormInput}
-          style={{ margin: "1rem 0" }}
-        />
-      </form>
-      <button onClick={handleButtonClick}>click me</button>
+      <Book />
     </section>
   );
 };
 
-const Book = ({ book: { img, title, author } }) => {
+const Book = () => {
   return (
-    <article className="book">
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <h4>{author.toUpperCase()}</h4>
+    <article>
+      <Image />
+      <Title />
+      <Author />
     </article>
   );
+};
+
+const Image = () => {
+  return <img src="" alt="" />;
+};
+
+const Title = () => {
+  return <h2>Title</h2>;
+};
+
+const Author = () => {
+  return <h4>Author</h4>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
