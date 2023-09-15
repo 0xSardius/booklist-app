@@ -17,34 +17,29 @@ const books = [
   },
 ];
 
-const BookList = () => {
+const title = "Hello Beautiful";
+const author = "Ann Napolitano";
+
+const BookList = (props) => {
   return (
-    <section>
+    <section className="booklist">
+      <Book props={}/>
+      <Book />
+      <Book />
       <Book />
     </section>
   );
 };
 
-const Book = () => {
+const Book = (props) => {
+  const { img, title, author } = props;
   return (
-    <article>
-      <Image />
-      <Title />
-      <Author />
+    <article className="book">
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
     </article>
   );
-};
-
-const Image = () => {
-  return <img src="" alt="" />;
-};
-
-const Title = () => {
-  return <h2>Title</h2>;
-};
-
-const Author = () => {
-  return <h4>Author</h4>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
