@@ -17,13 +17,10 @@ const books = [
   },
 ];
 
-const title = "Hello Beautiful";
-const author = "Ann Napolitano";
-
 const BookList = (props) => {
   return (
     <section className="booklist">
-      <Book props={}/>
+      <Book />
       <Book />
       <Book />
       <Book />
@@ -31,8 +28,7 @@ const BookList = (props) => {
   );
 };
 
-const Book = (props) => {
-  const { img, title, author } = props;
+const Book = ({ img, title, author }) => {
   return (
     <article className="book">
       <img src={img} alt={title} />
