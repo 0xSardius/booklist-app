@@ -17,24 +17,29 @@ const books = [
   },
 ];
 
-const BookList = (props) => {
-  return (
-    <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-    </section>
-  );
-};
-
 const Book = ({ img, title, author }) => {
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author}</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus,
+        nesciunt? Ipsum ut itaque maxime et porro sunt ex reprehenderit
+        deleniti.
+      </p>
+      <button>Click Me</button>
     </article>
+  );
+};
+
+const BookList = () => {
+  return (
+    <section className="booklist">
+      {books.map((book) => {
+        return <Book key={book.id} {...book}></Book>;
+      })}
+    </section>
   );
 };
 
